@@ -8,15 +8,17 @@ const reader = readline.createInterface({
 
 console.log("Welcome to my Password Validator! ");
 
-reader.question("Please enter your password: ", function(input){
+reader.question("Please enter a password that is 10 characters or more and contains at least one number: ", function(input){
     
-//console.log(input);
+//first testing the length requirements
 
 if(input.length < 10){
     console.log("Failure...I can't keep your things safe like this!");
 }   else if (input.length >= 10){
     console.log("Success! I shall guard your privacy.")
 }
+
+//this function checks for any numbers within the input, but does not account for special characters...
 
 function stringContainsNumber(input){
     let string1 = String(input);
@@ -26,26 +28,35 @@ function stringContainsNumber(input){
         }   else {
             return false;
         }
-    
-    return;
   }
-  
 }
 
 console.log(stringContainsNumber(input)?"And great job adding numbers!":"Try adding a number?")
 
 
-  
 
-
-
-    reader.close()
+reader.close()
 });
 
 
 /*
-Review later!
+Review and maybe use later!
+//multi-line string templates..
+
+Use as first callback fn to test for Special Characters?
+
+function stringContainsSpChar(input){
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+if(format.test(string)){
+  return true;
+} else {
+  return false;
+}
 
 function hasNumber(input) {
     return /\d/.test(input);
 */
+
+
+//The ASCII stuff seems fun maybe later
