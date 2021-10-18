@@ -10,7 +10,7 @@ console.log("Welcome to my Password Validator! ");
 
 reader.question("Please enter your password: ", function(input){
     
-console.log(input);
+//console.log(input);
 
 if(input.length < 10){
     console.log("Failure...I can't keep your things safe like this!");
@@ -18,6 +18,24 @@ if(input.length < 10){
     console.log("Success! I shall guard your privacy.")
 }
 
+function stringContainsNumber(input){
+    let string1 = String(input);
+    for( let i = 0; i < string1.length; i++){
+        if(!isNaN(string1.charAt(i)) && !(string1.charAt(i) === " ") ){
+          return true;
+        }   else {
+            return false;
+        }
+    
+    return;
+  }
+  
+}
+
+console.log(stringContainsNumber(input)?"And great job adding numbers!":"Try adding a number?")
+
+
+  
 
 
 
@@ -25,7 +43,9 @@ if(input.length < 10){
 });
 
 
-/*rl.question('What is your age? ', (age) => {
-	console.log('Your age is: ' + age);
-})
+/*
+Review later!
+
+function hasNumber(input) {
+    return /\d/.test(input);
 */
